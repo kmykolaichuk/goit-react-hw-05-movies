@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { SharedLayout } from './SharedLayout';
+import { SharedLayout } from './SharedLayout/SharedLayout';
 import { Cast } from './Cast/Cast';
 import { Reviews } from './Reviews/Reviews';
 
@@ -20,7 +20,6 @@ export const App = () => {
         <Route path="cast" element={<Cast />} />
         <Route path="reviews" element={<Reviews />} />
       </Route>
-      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
 };
