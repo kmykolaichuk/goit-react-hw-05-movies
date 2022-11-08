@@ -1,13 +1,18 @@
 import styled from 'styled-components';
 
 export const ActorImg = styled.img`
-  height: 200px;
-  width: 150px;
+  height: 240px;
+  width: 200px;
 `;
 
 export const ActorList = styled.ul`
   list-style: none;
   align-items: center;
-  display: grid;
-  grid-template-columns: repeat(4, 2fr);
+  display: flex;
+  flex-wrap: wrap;
+
+  li:not(:last-child) {
+    margin-right: 32px;
+    align-items: center;
+  }
 `;

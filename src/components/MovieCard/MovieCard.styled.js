@@ -3,9 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
   display: flex;
-  -webkit-box-shadow: 5px 5px 10px 2px rgba(34, 60, 80, 0.2);
-  -moz-box-shadow: 5px 5px 10px 2px rgba(34, 60, 80, 0.2);
-  box-shadow: 5px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px -4px 4px -4px rgba(34, 60, 80, 0.4) inset;
   margin-top: 20px;
 `;
 
@@ -25,9 +23,11 @@ export const GenreWrapper = styled.div`
 `;
 
 export const InfoWrapper = styled.div`
-  -webkit-box-shadow: 5px 5px 10px 2px rgba(34, 60, 80, 0.2);
-  -moz-box-shadow: 5px 5px 10px 2px rgba(34, 60, 80, 0.2);
-  box-shadow: 5px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px -4px 4px -4px rgba(34, 60, 80, 0.4) inset;
+
+  li {
+    margin-bottom: 10px;
+  }
 `;
 
 export const CastLink = styled(NavLink)`

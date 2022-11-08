@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import { MovieDetails } from '../Api/Api';
-import { FilmCard } from '../MovieCard/MovieCard';
+import { MovieCard } from '../MovieCard/MovieCard';
 
 export default function MovieDetailsContainer() {
   const { itemId } = useParams();
@@ -24,7 +24,7 @@ export default function MovieDetailsContainer() {
 
   return (
     <>
-      {item && <FilmCard item={item} />}
+      {item && <MovieCard item={item} />}
       <ToastContainer autoClose={3000} />
     </>
   );

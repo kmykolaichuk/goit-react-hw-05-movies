@@ -25,9 +25,9 @@ export default function Home() {
       <main>
         <h1>Trending today</h1>
         <ul>
-          {list.map(item => (
-            <li key={item.id}>
-              <Link to={`/movies/${item.id}`}>{item.title}</Link>
+          {list.map(({ id, title }) => (
+            <li key={id}>
+              <Link to={`/movies/${id}`}>{title}</Link>
             </li>
           ))}
         </ul>

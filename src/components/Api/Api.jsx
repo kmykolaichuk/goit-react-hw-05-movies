@@ -14,12 +14,12 @@ export async function SearchMovies(query) {
   return search.data.results;
 }
 
-export const MovieDetails = async id => {
+export async function MovieDetails(id) {
   const details = await axios.get(
     `https://api.themoviedb.org/3/movie/${id}?api_key=2fdfddfa3e227dca651ac19b188fea2c&language=en-US`
   );
   return details.data;
-};
+}
 
 export async function MovieCredits(id) {
   const credits = await axios.get(

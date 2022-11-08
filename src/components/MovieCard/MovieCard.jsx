@@ -8,13 +8,13 @@ import {
   CastLink,
 } from './MovieCard.styled';
 
-export const FilmCard = ({ item }) => {
+export const MovieCard = ({ item }) => {
   const filmId = item.id;
   const location = useLocation();
 
   return (
     <main>
-      <Link to={location?.state?.from ?? '/home'}>
+      <Link to={location?.state?.from ?? '/'}>
         <HiArrowSmLeft />
         Go back
       </Link>
@@ -33,8 +33,8 @@ export const FilmCard = ({ item }) => {
           <p>{item.overview}</p>
           <h3>Genres</h3>
           <GenreWrapper>
-            {item.genres.map(item => (
-              <p key={item.id}>{item.name}</p>
+            {item.genres.map(({ id, name }) => (
+              <p key={id}>{name}</p>
             ))}
           </GenreWrapper>
         </div>
@@ -43,18 +43,22 @@ export const FilmCard = ({ item }) => {
       <InfoWrapper>
         <h3>Additional information</h3>
         <ul>
-          <CastLink
-            to={`/movies/${filmId}/cast`}
-            state={{ from: location?.state?.from ?? '/' }}
-          >
-            Cast
-          </CastLink>
+          <li>
+            <CastLink
+              to={`/movies/${filmId}/cast`}
+              state={{ from: location?.state?.from ?? '/' }}
+            >
+              Cast
+            </CastLink>
+          </li>
+          <li>   
           <NavLink
             to={`/movies/${filmId}/reviews`}
             state={{ from: location?.state?.from ?? '/' }}
           >
             Reviews
           </NavLink>
+          </li>
         </ul>
       </InfoWrapper>
 
