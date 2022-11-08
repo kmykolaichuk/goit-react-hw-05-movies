@@ -24,6 +24,7 @@ export const GenreWrapper = styled.div`
 
 export const InfoWrapper = styled.div`
   box-shadow: 0px -4px 4px -4px rgba(34, 60, 80, 0.4) inset;
+  padding-bottom: 4px;
 
   li {
     margin-bottom: 10px;

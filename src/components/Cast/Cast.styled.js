@@ -1,15 +1,12 @@
 import styled from 'styled-components';
 
 export const ActorImg = styled.img`
-  height: 240px;
-  width: 200px;
+  height: 160px;
+  width: 120px;
 `;
 
 export const ActorList = styled.ul`
   list-style: none;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
 
   li:not(:last-child) {
     margin-right: 32px;

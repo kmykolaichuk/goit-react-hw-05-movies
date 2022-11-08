@@ -18,7 +18,8 @@ export default function MoviesPage() {
 
   const onInputSubmit = e => {
     e.preventDefault();
-    setSearchParams({ query: e.currentTarget.elements.query.value });
+    const form = e.currentTarget;
+    setSearchParams({ query: form.elements.query.value });
 
     if (e.currentTarget.elements.query.value.trim() === '') {
       toast.error('Please, enter your search query.', {
@@ -26,11 +27,11 @@ export default function MoviesPage() {
       });
       return;
     }
-    e.currentTarget.reset();
+    form.reset();
   };
 
   useEffect(() => {
-    if (query === null) {
+    if (query === null || query === '') {
       return;
     }
 
