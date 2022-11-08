@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { FetchTrendingMovies } from '../Services/MovieDB';
+import { Link } from 'react-router-dom';
+import { FetchTrendingMovies } from '../Api/Api';
 import { ToastContainer, toast } from 'react-toastify';
-import { Link } from '../Navigation/Navigation.styled';
 
 export default function Home() {
   const [list, setList] = useState([]);

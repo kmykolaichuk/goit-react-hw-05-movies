@@ -1,12 +1,12 @@
 import { useSearchParams, useLocation, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { SearchMovies } from '../Services/MovieDB';
+import { SearchMovies } from '../Api/Api';
 import {
-  SearchbarMain,
+  SearchbarDiv,
   Form,
   FormButton,
   FormInput,
-} from '../components/SearchBar/SearchBar.styled';
+} from '../SearchBar/SearchBar.styled';
 import { HiSearch } from 'react-icons/hi';
 import { toast } from 'react-toastify';
 
@@ -58,21 +58,23 @@ export default function MoviesPage() {
 
   return (
     <>
-      <SearchbarMain>
-        <Form onSubmit={onInputSubmit}>
-          <FormButton type="submit">
-            <HiSearch size={26} /> <span>Search</span>
-          </FormButton>
+      <main>
+        <SearchbarDiv>
+          <Form onSubmit={onInputSubmit}>
+            <FormButton type="submit">
+              <HiSearch size={26} /> <span>Search</span>
+            </FormButton>
 
-          <FormInput
-            type="text"
-            autoComplete="off"
-            autoFocus
-            placeholder="Search movies"
-            name="query"
-          />
-        </Form>
-      </SearchbarMain>
+            <FormInput
+              type="text"
+              autoComplete="off"
+              autoFocus
+              placeholder="Search movies"
+              name="query"
+            />
+          </Form>
+        </SearchbarDiv>
+      </main>
 
       {movies.length > 0 && (
         <ul>

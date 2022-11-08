@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { MovieCredits } from 'components/Services/MovieDB';
+import { toast } from 'react-toastify';
+import { MovieCredits } from '../Api/Api';
 import { ActorImg, ActorList } from './Cast.styled';
 
 export const Cast = () => {
@@ -36,8 +37,8 @@ export const Cast = () => {
                 />
               ) : (
                 <img
-                  src=""
-                  alt="No image"
+                  src="https://i0.wp.com/learn.onemonth.com/wp-content/uploads/2017/08/1-10.png?w=845&ssl=1"
+                  alt="Not found"
                   height={300}
                   width={200}
                 />
