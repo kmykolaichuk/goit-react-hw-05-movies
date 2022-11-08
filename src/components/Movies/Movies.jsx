@@ -2,13 +2,13 @@ import { useSearchParams, useLocation, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { SearchMovies } from '../Api/Api';
 import {
-  SearchbarDiv,
+  SearchbarWrapper,
   Form,
   FormButton,
   FormInput,
 } from '../SearchBar/SearchBar.styled';
 import { HiSearch } from 'react-icons/hi';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function MoviesPage() {
   const [movies, setMovies] = useState([]);
@@ -59,7 +59,7 @@ export default function MoviesPage() {
   return (
     <>
       <main>
-        <SearchbarDiv>
+        <SearchbarWrapper>
           <Form onSubmit={onInputSubmit}>
             <FormButton type="submit">
               <HiSearch size={26} /> <span>Search</span>
@@ -73,7 +73,7 @@ export default function MoviesPage() {
               name="query"
             />
           </Form>
-        </SearchbarDiv>
+        </SearchbarWrapper>
       </main>
 
       {movies.length > 0 && (
@@ -87,6 +87,7 @@ export default function MoviesPage() {
           ))}
         </ul>
       )}
+      <ToastContainer autoClose={3000} />
     </>
   );
 }
